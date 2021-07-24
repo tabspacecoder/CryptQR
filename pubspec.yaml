@@ -1,0 +1,37 @@
+name: qr_scanner
+description: A qr scanner and creator
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  qr_code_scanner: ^0.5.2
+  pretty_qr_code: ^2.0.2
+  path_provider: ^2.0.2
+  screenshot: ^1.2.3
+  share: ^2.0.4
+  image_gallery_saver: ^1.6.9
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  assets:
+    - images/
+  fonts:
+    - family: BEYNO
+      fonts:
+        - asset: fonts/BEYNO.ttf
+  uses-material-design: true
+
