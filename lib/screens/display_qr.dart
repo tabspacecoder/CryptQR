@@ -24,7 +24,8 @@ class _qrCodeDisplayPageState extends State<qrCodeDisplayPage> {
         final imagePath = await File('${directory.path}/image.png').create();
         await imagePath.writeAsBytes(image);
         await Share.shareFiles([imagePath.path],
-            text: "QR Code Created and Shared from Crypt QR");
+            text:
+                "QR Code Created and Shared from Crypt QR - https://github.com/tabspacecoder/CryptQR");
       }
     });
   }
