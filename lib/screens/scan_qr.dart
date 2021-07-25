@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:developer';
-import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -14,12 +13,13 @@ class _qrCodeScannerPageState extends State<qrCodeScannerPage> {
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  void showSnackbar(BuildContext context, String filename) {
+  void showSnackbar(BuildContext context) {
     var snackBar = SnackBar(
       shape: StadiumBorder(),
-      elevation: 20,
+      elevation: 0,
       behavior: SnackBarBehavior.floating,
-      duration: Duration(seconds: 3),
+      width: 158,
+      duration: Duration(seconds: 1),
       content: Text('Copied to clipboard!'),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -47,6 +47,7 @@ class _qrCodeScannerPageState extends State<qrCodeScannerPage> {
                   IconButton(
                     onPressed: () {
                       Clipboard.setData(ClipboardData(text: result!.code));
+                      showSnackbar(context);
                     },
                     icon: Icon(
                       Icons.content_copy_outlined,
